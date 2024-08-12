@@ -24,7 +24,10 @@ From a second terminal window run `cd ./client && npm run dev`
 
 
 # Building the project
-
+- Use the command `make prod` from the root folder
+  
+  Or
+  
 - Go to the client folder and run `npm run build`  from the terminal
 - Go to the server folder and run `npm run build` from the terminal
 - Still from the server folder run `npm run start` from the terminal
