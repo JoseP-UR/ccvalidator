@@ -1,0 +1,13 @@
+{
+    "exec": "ts-node src/index" ,
+    "ext": "ts,json",
+    "ignore": [
+        "node_modules",
+        "public",
+        "package-lock.json",
+        "README.md"
+    ],
+    "watch": [
+        "src"
+    ]
+}

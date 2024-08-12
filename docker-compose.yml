@@ -1,0 +1,35 @@
+name: ccvalidator
+
+services:
+  nodeserver:
+    image: node:lts
+    ports:
+      - "3000:3000"
+    entrypoint: "/server/entrypoint.sh"
+    volumes:
+      - ./server:/server
+    networks:
+      - ccvalidator
+    user: "node"
+    environment:
+      - NODE_ENV=development
+      - APP_PORT=3000
+      - DEV_CLIENT_PORT=3001
+
+  client:
+    image: node:lts
+    ports:
+      - "3001:3001"
+    entrypoint: "/client/entrypoint.sh"
+    volumes:
+      - ./client:/client
+    user: "node"
+    networks:
+      - ccvalidator
+    environment:
+      - NODE_ENV=development
+      - APP_PORT=3001
+
+networks:
+  ccvalidator:
+    driver: bridge
